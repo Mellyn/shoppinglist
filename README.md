@@ -1,16 +1,24 @@
 # Mini-Einkaufsliste
 
+### Umgebung/Frameworks/Tools/Bibliotheken:
+
+- [Angular](https://angular.io) in Version 14.2.x
+- [Angular Material CDK](https://material.angular.io/cdk/drag-drop/overview) (für Drag/Drop)
+- [Tailwind](https://tailwindcss.com) (css)
+- [FontAwesome](https://github.com/FortAwesome/angular-fontawesome) (Icons)
+- [Jest](https://jestjs.io) (UnitTests)
+
 ## Umgebung
 
-- Angular: Version 14.2.x
-- Start lokaler Development Server: `npm run start` (`http://localhost:4200/`)
-- Projektbuild: `npm run build` (Ordner: dist/)
+- Start lokaler Development-Server: `npm run start` (`http://localhost:4200/`)
+- Projekt-Build: `npm run build` (Ordner: dist/)
+- Start Tests: `npm run test`.
 
-## Tests
+### IDE
 
-- UnitTests: Testumgebung Jest: `npm run test`.
-
-## Frameworks/Tools
-
-- Tailwind
-- Angular Material CDK
+- Empfohlende Plugins (falls IDE VSCode):
+  - Angular Language Service (angular.ng-template)
+  - Angular TypeScript Snippets (johnpapa.angular2)
+  - Tailwind CSS IntelliSense (esbenp.prettier-vscode)
+  - Prettier Formatter (bradlc.vscode-tailwindcss)
+  - Jest (Orta.vscode-jest)

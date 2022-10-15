@@ -1,1 +1,80 @@
-<p>shopping-list works!</p>
+<section class="container mx-auto">
+  <h1 class="text-center my-5">Mini-Einkaufsliste</h1>
+
+  <form novalidate [formGroup]="listForm">
+    <div class="flex justify-center">
+      <div class="mt-2 bg-white max-w-full w-[500px] border-0">
+        <div class="flex justify-between items-center flex-nowrap">
+          <div class="w-1/6">
+            <input
+              type="number"
+              min="1"
+              name="amount"
+              id="amount"
+              class="action-input-field"
+              placeholder="Anzahl"
+              required
+            />
+          </div>
+          <div class="pl-2 grow">
+            <input
+              type="text"
+              name="description"
+              id="description"
+              class="action-input-field"
+              placeholder="Position"
+              required
+            />
+          </div>
+          <div class="ml-6 mr-1 py-2">
+            <ng-container *ngIf="!editMode">
+              <button type="button" class="action-btn add">
+                <fa-icon icon="plus"></fa-icon>
+              </button>
+            </ng-container>
+            <ng-container *ngIf="editMode">
+              <button type="button" class="action-btn save">
+                <fa-icon icon="check"></fa-icon>
+              </button>
+            </ng-container>
+          </div>
+          <div class="py-2">
+            <button type="button" class="action-btn clear">
+              <fa-icon icon="delete-left"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="flex justify-center mt-6">
+    <div
+      cdkDropList
+      class="mt-2 max-w-full w-[500px]"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div
+        class="flex justify-between items-center flex-nowrap mb-1"
+        *ngFor="let item of shoppingList; let i = index"
+        cdkDrag
+      >
+        <div
+          class="py-3 px-3 w-full items-center bg-white drop-shadow-md flex flex-row flex-nowrap justify-between"
+        >
+          <div
+            class="flex flex-row grow flex-nowrap justify-start cursor-pointer"
+          >
+            <div class="mr-6 text-slate-600">{{ item.amount }}x</div>
+            <div class="mr-2 text-slate-700">{{ item.description }}</div>
+          </div>
+          <div class="flex flex-row flex-nowrap justify-end">
+            <button type="button" class="action-btn del">
+              <fa-icon icon="trash-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

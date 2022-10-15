@@ -4,6 +4,7 @@
     "angular.ng-template",
     "johnpapa.angular2",
     "esbenp.prettier-vscode",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "Orta.vscode-jest"
   ]
 }
