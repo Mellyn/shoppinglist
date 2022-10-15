@@ -5,7 +5,7 @@ import { ShoppingListItem } from '../data/shoppinglist.model';
 
 /**
  * ShoppingListService
- * Data Handling - API Calls
+ * Data Handling (for API Calls)
  * Melanie Lucht
  * 15.10.2022
  */
@@ -25,7 +25,6 @@ export class ShoppingListService {
   }
 
   private loadDefaultData() {
-    // Here API call (GET)
     const list: ShoppingListItem[] = [
       {
         id: 1,

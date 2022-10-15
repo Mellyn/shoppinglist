@@ -42,7 +42,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
     this.shoppingListSub = this.shoppingList$.subscribe({
       next: (listItems) => {
-        console.log('List Changed', listItems);
         this.shoppingList = listItems;
       },
       error: (error) => {
@@ -59,7 +58,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   }
 
   onClickItem(item: ShoppingListItem) {
-    console.log('CLICKED', item);
     this.message = '';
     this.listForm.setValue({
       id: item.id,
@@ -70,7 +68,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   }
 
   onClear() {
-    console.log('CLEAR');
     this.editMode = false;
     this.message = '';
     this.listForm.setValue({
@@ -93,7 +90,6 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
       this.message = 'Position konnte nicht gelöscht werden.';
       return;
     }
-    console.log('Delete', item);
     this.message = '';
     this.shoppingListService.delete(item);
   }
@@ -102,10 +98,8 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     const formValue: ShoppingListItem = this.listForm.value;
     if (this.checkValidation(formValue)) {
       if (type.type === 'edit') {
-        console.log('Edit');
         this.shoppingListService.edit(formValue);
       } else {
-        console.log('Add', formValue);
         this.shoppingListService.add(formValue);
       }
       this.message = '';
