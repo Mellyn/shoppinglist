@@ -22,3 +22,10 @@
   - Tailwind CSS IntelliSense (esbenp.prettier-vscode)
   - Prettier Formatter (bradlc.vscode-tailwindcss)
   - Jest (Orta.vscode-jest)
+
+## Funktionen
+
+- Neuer Eintrag (Neuer Eintrag, Speichern)
+- Editieren (Click in den Eintrag, Bearbeiten, Speichern)
+- Löschen (Delete-Button)
+- Sortieren per Drag&Drop

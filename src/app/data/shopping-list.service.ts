@@ -5,7 +5,9 @@ import { ShoppingListItem } from '../data/shoppinglist.model';
 
 /**
  * ShoppingListService
- * Data Handling - later API Calls
+ * Data Handling - API Calls
+ * Melanie Lucht
+ * 15.10.2022
  */
 
 @Injectable({
@@ -27,12 +29,7 @@ export class ShoppingListService {
     const list: ShoppingListItem[] = [
       {
         id: 1,
-        description: 'TestItem1',
-        amount: 3,
-      },
-      {
-        id: 2,
-        description: 'TestItem2',
+        description: 'Brötchen',
         amount: 4,
       },
     ];
@@ -41,7 +38,6 @@ export class ShoppingListService {
   }
 
   public add(newItem: ShoppingListItem) {
-    newItem.id = this.store.getNewId();
     this.store.add(newItem);
   }
 

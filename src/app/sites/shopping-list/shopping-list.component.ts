@@ -57,4 +57,68 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.shoppingList, event.previousIndex, event.currentIndex);
   }
+
+  onClickItem(item: ShoppingListItem) {
+    console.log('CLICKED', item);
+    this.message = '';
+    this.listForm.setValue({
+      id: item.id,
+      description: item.description,
+      amount: item.amount,
+    });
+    this.editMode = true;
+  }
+
+  onClear() {
+    console.log('CLEAR');
+    this.editMode = false;
+    this.message = '';
+    this.listForm.setValue({
+      id: 0,
+      description: '',
+      amount: '',
+    });
+  }
+
+  onAdd() {
+    this.save({ type: 'new' });
+  }
+
+  onEdit() {
+    this.save({ type: 'edit' });
+  }
+
+  onDelete(item: ShoppingListItem) {
+    if (!item.id || item.id < 1) {
+      this.message = 'Position konnte nicht gelöscht werden.';
+      return;
+    }
+    console.log('Delete', item);
+    this.message = '';
+    this.shoppingListService.delete(item);
+  }
+
+  private save(type: { type: string }) {
+    const formValue: ShoppingListItem = this.listForm.value;
+    if (this.checkValidation(formValue)) {
+      if (type.type === 'edit') {
+        console.log('Edit');
+        this.shoppingListService.edit(formValue);
+      } else {
+        console.log('Add', formValue);
+        this.shoppingListService.add(formValue);
+      }
+      this.message = '';
+      this.onClear();
+    }
+  }
+
+  private checkValidation(formValue: ShoppingListItem): boolean {
+    let returnValue = true;
+    if (formValue.amount < 1 || formValue.description === '') {
+      this.message = 'Bitte mindestens eine Position eintragen.';
+      returnValue = false;
+    }
+    return returnValue;
+  }
 }

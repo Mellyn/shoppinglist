@@ -2,6 +2,13 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ShoppingListItem } from '../data/shoppinglist.model';
 
+/**
+ * ShoppingListStoreService
+ * Mini Data Store
+ * Melanie Lucht
+ * 15.10.2022
+ */
+
 enum ACTIONS {
   LOAD,
   ADD,
@@ -24,6 +31,7 @@ export class ShoppingListStoreService {
   }
 
   public add(newItem: ShoppingListItem) {
+    newItem.id = this.getNewId();
     this.shoppingList = [...this.shoppingList, newItem];
     this.shoppingList$.next(this.shoppingList);
   }
