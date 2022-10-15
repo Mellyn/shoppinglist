@@ -93,7 +93,6 @@ describe('ShoppingListStoreService', () => {
     // skip empty and loading
     const list$ = service.shoppingList$.pipe(skip(2));
     list$.subscribe((data) => {
-      console.log(data);
       try {
         expect(data).toEqual([
           {
