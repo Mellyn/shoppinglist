@@ -1,0 +1,18 @@
+<div
+  class="py-3 px-3 w-full items-center bg-white drop-shadow-md flex flex-row flex-nowrap justify-between cursor-move"
+>
+  <div
+    class="flex flex-row grow flex-nowrap justify-start cursor-pointer"
+    (click)="onClickItem(item)"
+  >
+    <div class="mr-6 w-fit text-slate-600">{{ item?.amount }}x</div>
+    <div class="mr-2 text-slate-700 break-all">
+      {{ item?.description }}
+    </div>
+  </div>
+  <div class="flex flex-row flex-nowrap justify-end">
+    <button type="button" class="action-btn del" (click)="onDeleteItem(item)">
+      <fa-icon icon="trash-alt"></fa-icon>
+    </button>
+  </div>
+</div>

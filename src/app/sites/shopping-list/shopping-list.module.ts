@@ -15,9 +15,10 @@ import {
   faDeleteLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { ShoppingListComponent } from './shopping-list.component';
+import { ListItemComponent } from './list-item/list-item.component';
 
 @NgModule({
-  declarations: [ShoppingListComponent],
+  declarations: [ShoppingListComponent, ListItemComponent],
   imports: [
     CommonModule,
     FontAwesomeModule,
