@@ -3,7 +3,6 @@ import {
   EventEmitter,
   Input,
   OnChanges,
-  OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
@@ -14,7 +13,7 @@ import { ShoppingListItem } from 'src/app/data/shoppinglist.model';
   templateUrl: './list-item.component.html',
   styleUrls: ['./list-item.component.scss'],
 })
-export class ListItemComponent implements OnInit, OnChanges {
+export class ListItemComponent implements OnChanges {
   @Input() position: ShoppingListItem | undefined;
   @Output() onClicked = new EventEmitter();
   @Output() onDelete = new EventEmitter();
@@ -23,12 +22,9 @@ export class ListItemComponent implements OnInit, OnChanges {
   constructor() {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('Changes', changes);
     const item: ShoppingListItem = changes['position']['currentValue'];
     this.item = item;
   }
-
-  ngOnInit(): void {}
 
   onClickItem(item: ShoppingListItem | undefined) {
     this.onClicked.emit(item);
