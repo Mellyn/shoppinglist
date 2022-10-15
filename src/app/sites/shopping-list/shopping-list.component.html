@@ -85,8 +85,10 @@
             class="flex flex-row grow flex-nowrap justify-start cursor-pointer"
             (click)="onClickItem(item)"
           >
-            <div class="mr-6 text-slate-600">{{ item.amount }}x</div>
-            <div class="mr-2 text-slate-700">{{ item.description }}</div>
+            <div class="mr-6 w-fit text-slate-600">{{ item.amount }}x</div>
+            <div class="mr-2 text-slate-700 break-all">
+              {{ item.description }}
+            </div>
           </div>
           <div class="flex flex-row flex-nowrap justify-end">
             <button
