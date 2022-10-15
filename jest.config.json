@@ -1,0 +1,7 @@
+{
+  "preset": "jest-preset-angular",
+  "setupFilesAfterEnv": ["<rootDir>/setup-jest.ts"],
+  "testTimeout": 5000,
+  "bail": true,
+  "verbose": true
+}
