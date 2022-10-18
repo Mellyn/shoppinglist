@@ -5,9 +5,9 @@ import {
   tick,
 } from '@angular/core/testing';
 import { SimpleChange } from '@angular/core';
-import { ListItemComponent } from '../../../src/app/sites/shopping-list/list-item/list-item.component';
+import { ListItemComponent } from '../../../../src/app/sites/shopping-list/list-item/list-item.component';
 import { By } from '@angular/platform-browser';
-import { IconsModule } from '../../../src/app/shared/icons-module/icons.module';
+import { IconsModule } from '../../../../src/app/shared/icons-module/icons.module';
 
 // test if functions are called on click
 // test if text is changed when ngOnChanges is called

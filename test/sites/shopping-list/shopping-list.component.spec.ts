@@ -6,10 +6,10 @@ import {
   tick,
 } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ShoppingListComponent } from '../../src/app/sites/shopping-list/shopping-list.component';
-import { ShoppingListService } from '../../src/app/data/shopping-list.service';
-import { MockShoppingListService } from '../mocks/shopping-list.service.mock';
-import { IconsModule } from '../../src/app/shared/icons-module/icons.module';
+import { ShoppingListComponent } from '../../../src/app/sites/shopping-list/shopping-list.component';
+import { ShoppingListService } from '../../../src/app/data/shopping-list.service';
+import { MockShoppingListService } from '../../mocks/shopping-list.service.mock';
+import { IconsModule } from '../../../src/app/shared/icons-module/icons.module';
 import { By } from '@angular/platform-browser';
 import { ShoppingListItem } from 'src/app/data/shoppinglist.model';
 

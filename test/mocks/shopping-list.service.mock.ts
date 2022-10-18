@@ -3,15 +3,18 @@ import { BehaviorSubject } from 'rxjs';
 import { ShoppingListItem } from 'src/app/data/shoppinglist.model';
 
 export class MockShoppingListService {
-  shoppingList$ = new BehaviorSubject([]);
+  private _shoppingList$ = new BehaviorSubject<ShoppingListItem[]>([]);
+  public get shoppingList$() {
+    return this._shoppingList$;
+  }
 
   add(items: ShoppingListItem[]) {
-    this.shoppingList$ = new BehaviorSubject([]);
+    this._shoppingList$ = new BehaviorSubject<ShoppingListItem[]>([]);
   }
   edit(newItem: ShoppingListItem) {
-    this.shoppingList$ = new BehaviorSubject([]);
+    this._shoppingList$ = new BehaviorSubject<ShoppingListItem[]>([]);
   }
   delete(itemId: number) {
-    this.shoppingList$ = new BehaviorSubject([]);
+    this._shoppingList$ = new BehaviorSubject<ShoppingListItem[]>([]);
   }
 }
