@@ -3,5 +3,8 @@
   "setupFilesAfterEnv": ["<rootDir>/setup-jest.ts"],
   "testTimeout": 5000,
   "bail": true,
-  "verbose": true
+  "verbose": true,
+  "testMatch": [
+    "<rootDir>/test/**/*.spec.ts?(x)"
+  ]
 }

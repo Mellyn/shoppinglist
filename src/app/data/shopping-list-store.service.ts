@@ -5,8 +5,6 @@ import { ShoppingListItem } from '../data/shoppinglist.model';
 /**
  * ShoppingListStoreService
  * Mini Data Store
- * Melanie Lucht
- * 15.10.2022
  */
 
 enum ACTIONS {

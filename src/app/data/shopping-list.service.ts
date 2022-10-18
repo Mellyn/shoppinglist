@@ -6,8 +6,6 @@ import { ShoppingListItem } from '../data/shoppinglist.model';
 /**
  * ShoppingListService
  * Data Handling (for API Calls)
- * Melanie Lucht
- * 15.10.2022
  */
 
 @Injectable({

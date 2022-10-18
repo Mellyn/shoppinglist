@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "jest -c jest.config.json"
+    "test": "jest -c jest.config.json",
+    "test:coverage": "jest -c jest.config.json --coverage"
   },
   "private": true,
   "dependencies": {

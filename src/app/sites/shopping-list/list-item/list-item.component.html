@@ -3,10 +3,11 @@
 >
   <div
     class="flex flex-row grow flex-nowrap justify-start cursor-pointer"
+    data-testid="description-row"
     (click)="onClickItem(item)"
   >
     <div class="mr-6 w-fit text-slate-600">{{ item?.amount }}x</div>
-    <div class="mr-2 text-slate-700 break-all">
+    <div class="mr-2 text-slate-700 break-all" data-testid="description-text">
       {{ item?.description }}
     </div>
   </div>

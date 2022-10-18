@@ -31,18 +31,33 @@
           </div>
           <div class="ml-6 mr-1 py-2">
             <ng-container *ngIf="!editMode">
-              <button type="button" class="action-btn add" (click)="onAdd()">
+              <button
+                type="button"
+                class="action-btn add"
+                data-testid="btn-add"
+                (click)="onAdd()"
+              >
                 <fa-icon icon="plus"></fa-icon>
               </button>
             </ng-container>
             <ng-container *ngIf="editMode">
-              <button type="button" class="action-btn save" (click)="onEdit()">
+              <button
+                type="button"
+                class="action-btn save"
+                data-testid="btn-edit"
+                (click)="onEdit()"
+              >
                 <fa-icon icon="check"></fa-icon>
               </button>
             </ng-container>
           </div>
           <div class="py-2">
-            <button type="button" class="action-btn clear" (click)="onClear()">
+            <button
+              type="button"
+              class="action-btn clear"
+              data-testid="btn-clear"
+              (click)="onClear()"
+            >
               <fa-icon icon="delete-left"></fa-icon>
             </button>
           </div>

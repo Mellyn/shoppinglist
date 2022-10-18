@@ -73,7 +73,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.listForm.setValue({
       id: 0,
       description: '',
-      amount: '',
+      amount: '1',
     });
   }
 

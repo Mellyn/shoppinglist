@@ -1,6 +1,9 @@
 import { TestBed } from '@angular/core/testing';
-import { ShoppingListStoreService } from './shopping-list-store.service';
+import { ShoppingListStoreService } from '../../src/app/data/shopping-list-store.service';
 import { skip } from 'rxjs';
+
+// test of store functionality
+// load, add, edit and delete
 
 describe('ShoppingListStoreService', () => {
   let service: ShoppingListStoreService;
@@ -110,7 +113,7 @@ describe('ShoppingListStoreService', () => {
     service.delete(1);
   });
 
-  test('should create new id if empty', (done) => {
+  test('should begin with id 1 if list empty', (done) => {
     const list$ = service.shoppingList$.pipe(skip(2));
     list$.subscribe();
     const newId = service.getNewId();

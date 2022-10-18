@@ -13,7 +13,8 @@
 - Install: `npm install`
 - Start lokaler Development-Server: `npm run start` (`http://localhost:4200/`)
 - Projekt-Build: `npm run build` (Ordner: dist/)
-- Start Tests: `npm run test`.
+- Start Tests: `npm run test`
+- Test Coverage: `npm run test:coverage`
 
 ### IDE
 
