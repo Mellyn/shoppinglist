@@ -53,24 +53,32 @@ describe('ShoppingListStoreService', () => {
   });
 
   test('should edit a ShoppingListItem', (done) => {
-    const mockData = {
-      id: 1,
-      description: 'TestItem1',
-      amount: 3,
-    };
+    const mockData = [
+      {
+        id: 1,
+        description: 'TestItem1',
+        amount: 3,
+      },
+      {
+        id: 2,
+        description: 'TestItem2',
+        amount: 4,
+      },
+    ];
     // skip empty and adding
     const list$ = service.shoppingList$.pipe(skip(2));
     list$.subscribe((data) => {
       try {
         expect(data).toEqual([
           { id: 1, description: 'TestItemChanged', amount: 3 },
+          { id: 2, description: 'TestItem2', amount: 4 },
         ]);
         done();
       } catch (error) {
         done(error);
       }
     });
-    service.add(mockData);
+    service.load(mockData);
 
     const changedMockData = {
       id: 1,

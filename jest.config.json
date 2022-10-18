@@ -5,6 +5,7 @@
   "bail": true,
   "verbose": true,
   "testMatch": [
-    "<rootDir>/test/**/*.spec.ts?(x)"
+    "<rootDir>/test/data/**/*.spec.ts?(x)",
+    "<rootDir>/test/sites/**/*.spec.ts?(x)"
   ]
 }

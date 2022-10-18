@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { BehaviorSubject } from 'rxjs';
 import { ShoppingListItem } from 'src/app/data/shoppinglist.model';
 
