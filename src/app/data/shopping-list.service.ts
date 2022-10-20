@@ -26,8 +26,8 @@ export class ShoppingListService {
     const list: ShoppingListItem[] = [
       {
         id: 1,
-        description: 'Brötchen',
-        amount: 4,
+        description: 'Zeitung',
+        amount: 1,
       },
     ];
 

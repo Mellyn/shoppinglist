@@ -55,7 +55,6 @@ describe('ShoppingListComponent', () => {
     jest.spyOn(component, 'onClear');
     fixture.detectChanges();
 
-    // let clearButton = fixture.nativeElement.querySelector('.clearButton');
     const clearButton = fixture.debugElement.query(
       By.css('[data-testid="btn-clear"]')
     ).nativeElement;
@@ -75,7 +74,6 @@ describe('ShoppingListComponent', () => {
       By.css('[data-testid="btn-add"]')
     ).nativeElement;
 
-    // let clearButton = fixture.nativeElement.querySelector('.addButton');
     addButton.click();
     tick();
     expect(component.onAdd).toHaveBeenCalled();
@@ -91,7 +89,6 @@ describe('ShoppingListComponent', () => {
       By.css('[data-testid="btn-edit"]')
     ).nativeElement;
 
-    //let clearButton = fixture.nativeElement.querySelector('.editButton');
     editButton.click();
     tick();
     expect(component.onEdit).toHaveBeenCalled();
