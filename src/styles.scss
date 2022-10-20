@@ -1,0 +1,12 @@
+@tailwind base;
+@layer base {
+  h1 {
+    @apply text-2xl font-normal;
+  }
+  html,
+  body {
+    @apply h-full m-0;
+  }
+}
+@tailwind components;
+@tailwind utilities;

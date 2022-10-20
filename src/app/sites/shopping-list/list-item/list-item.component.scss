@@ -1,0 +1,6 @@
+.action-btn {
+  @apply h-8 w-8;
+  &.del {
+    @apply inline-flex items-center justify-center rounded-full bg-red-600 hover:bg-red-900 text-white;
+  }
+}

@@ -1,0 +1,102 @@
+<section class="container mx-auto">
+  <h1 class="text-center my-5">Mini-Einkaufsliste</h1>
+
+  <!-- Form -->
+  <form novalidate [formGroup]="listForm">
+    <div class="flex justify-center">
+      <div class="mt-2 bg-white max-w-full w-[500px] border-0">
+        <div class="flex justify-between items-center flex-nowrap">
+          <div class="w-1/6">
+            <input
+              type="number"
+              min="1"
+              formControlName="amount"
+              name="amount"
+              id="amount"
+              class="action-input-field"
+              placeholder="Anzahl"
+              required
+            />
+          </div>
+          <div class="pl-2 grow">
+            <input
+              type="text"
+              formControlName="description"
+              name="description"
+              id="description"
+              class="action-input-field"
+              placeholder="Position"
+              required
+            />
+          </div>
+          <div class="ml-6 mr-1 py-2">
+            <ng-container *ngIf="!editMode">
+              <button
+                type="button"
+                class="action-btn add"
+                data-testid="btn-add"
+                (click)="onAdd()"
+              >
+                <fa-icon icon="plus"></fa-icon>
+              </button>
+            </ng-container>
+            <ng-container *ngIf="editMode">
+              <button
+                type="button"
+                class="action-btn save"
+                data-testid="btn-edit"
+                (click)="onEdit()"
+              >
+                <fa-icon icon="check"></fa-icon>
+              </button>
+            </ng-container>
+          </div>
+          <div class="py-2">
+            <button
+              type="button"
+              class="action-btn clear"
+              data-testid="btn-clear"
+              (click)="onClear()"
+            >
+              <fa-icon icon="delete-left"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <ng-container *ngIf="message.length > 0">
+          <div
+            class="p-2 text-sm text-blue-700 bg-blue-100 dark:bg-blue-200 dark:text-blue-800"
+            role="alert"
+          >
+            <span class="font-medium"> {{ message }}</span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </form>
+
+  <!-- List empty-->
+  <ng-container *ngIf="shoppingList.length == 0">
+    <div class="flex justify-center mt-6">Noch keine Einträge</div>
+  </ng-container>
+
+  <!-- List  -->
+  <div class="flex justify-center mt-6">
+    <div
+      cdkDropList
+      class="mt-2 max-w-full w-[500px]"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div *ngFor="let item of shoppingList; let i = index" cdkDrag>
+        <app-list-item
+          class="flex justify-between items-center flex-nowrap mb-1"
+          [position]="item"
+          (onDelete)="onDelete(item)"
+          (onClicked)="onClickItem(item)"
+        >
+        </app-list-item>
+      </div>
+    </div>
+  </div>
+</section>

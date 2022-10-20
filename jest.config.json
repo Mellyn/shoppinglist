@@ -1,0 +1,11 @@
+{
+  "preset": "jest-preset-angular",
+  "setupFilesAfterEnv": ["<rootDir>/setup-jest.ts"],
+  "testTimeout": 5000,
+  "bail": true,
+  "verbose": true,
+  "testMatch": [
+    "<rootDir>/test/data/**/*.spec.ts?(x)",
+    "<rootDir>/test/sites/**/*.spec.ts?(x)"
+  ]
+}
